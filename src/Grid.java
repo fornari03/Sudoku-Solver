@@ -34,4 +34,33 @@ public class Grid {
             System.out.println();
         }
     }
+
+    public void solve() {
+        while (true) { // change to while (countZeros > 0)
+            boolean change = false;
+            for (int i = 0; i < 9; i++) {
+                for (int j = 0; j < 9; j++) {
+                    if (this.matrix[i][j].getNumber() == 0) {
+                        boolean[] possible = new boolean[9];
+                        int cont = 0;
+                        int index = 0;
+                        for (int k = 0; k < 9; k++) {
+                            possible[k] = this.matrix[i][j].getSubgrid().getNumbers()[k] || this.matrix[i][j].getRow().getNumbers()[k] || this.matrix[i][j].getColumn().getNumbers()[k];
+                            if (possible[k])
+                                cont++;
+                            else
+                                index = k;
+                        }
+                        if (cont == 8) {
+                            this.matrix[i][j].setNumber(index+1);
+                            change = true;
+                        }
+                    }
+                }
+            }
+
+            if (!change)
+                break;
+        }
+    }
 }

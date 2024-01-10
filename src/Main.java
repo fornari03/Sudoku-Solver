@@ -14,7 +14,7 @@ public class Main {
         input.close();
 
         Grid sudokuGrid = new Grid(matrix);
+        sudokuGrid.solve();
         sudokuGrid.showGrid();
-        System.out.println("Test");
     }
 }

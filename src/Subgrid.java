@@ -7,4 +7,8 @@ public class Subgrid {
         this.numbers[num-1] = true;
         this.countOnNumbers++;
     }
+
+    public boolean[] getNumbers() {
+        return this.numbers;
+    }
 }

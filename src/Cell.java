@@ -15,6 +15,13 @@ public class Cell {
         return this.number;
     }
 
+    public void setNumber(int number) {
+        this.number = number;
+        this.subgrid.setOnNumber(number);
+        this.row.setOnNumber(number);
+        this.column.setOnNumber(number);
+    }
+
     public Subgrid getSubgrid() {
         return this.subgrid;
     }
